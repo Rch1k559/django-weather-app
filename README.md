@@ -42,11 +42,7 @@
 - source venv/bin/activate
 
 # 3. Install Dependencies:
-
-- It is recommended to create a requirements.txt file using the command pip freeze > requirements.txt to lock the project dependencies.
 - pip install -r requirements.txt
-
-- (If you don't have this file yet, install the packages manually: pip install Django requests)
 
 # 4. Set up the API Key:
 - Get your free API key from OpenWeatherMap.
