@@ -17,7 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# This list holds the URL patterns for the project.
+# Django will go through each URL pattern in order and stop at the first one that matches the requested URL.
 urlpatterns = [
+    # The admin site URL.
     path('admin/', admin.site.urls),
+    # Include the URLs from the 'main' app.
+    # This makes the project more modular.
     path('', include('main.urls')),
 ]

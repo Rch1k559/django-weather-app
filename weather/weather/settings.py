@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# BASE_DIR will point to the root of the Django project.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -20,16 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# This key is used for cryptographic signing and should be kept secret.
 SECRET_KEY = 'django-insecure-zy=u-)vvzt-$@0$yf+*$)0wo_an&t84d^sa)i!f@ax04bd!&-$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Debug mode displays detailed error pages, which can expose sensitive information.
 DEBUG = True
 
+# A list of strings representing the host/domain names that this Django site can serve.
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# This is where you register your Django apps.
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,9 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
+    'main',  # Our custom app
 ]
 
+# Middleware is a framework of hooks into Django's request/response processing.
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,13 +55,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# The root URL configuration of the project.
 ROOT_URLCONF = 'weather.urls'
 
+# Configuration for templates.
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [], # List of directories where Django should look for templates.
+        'APP_DIRS': True, # Tells Django to look for templates in the 'templates' subdirectory of each installed app.
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -67,23 +74,24 @@ TEMPLATES = [
     },
 ]
 
+# The WSGI application entry point.
 WSGI_APPLICATION = 'weather.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
+# Here we configure the database connection.
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3', # Using SQLite as the database engine.
+        'NAME': BASE_DIR / 'db.sqlite3', # Path to the SQLite database file.
     }
 }
 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
-
+# A list of validators that are used to check the strength of users' passwords.
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -103,21 +111,28 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
+# The default language code for this installation.
 LANGUAGE_CODE = 'en-us'
 
+# The time zone for this installation.
 TIME_ZONE = 'UTC'
 
+# If you set this to False, Django will make some optimizations so as not
+# to load the internationalization machinery.
 USE_I18N = True
 
+# If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# URL to use when referring to static files located in STATIC_ROOT.
 STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
+# The default auto field type to use for models that don't have a primary key.
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
