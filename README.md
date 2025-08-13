@@ -28,7 +28,7 @@
 - Follow these steps to get the project running on your local machine.
 
 # 1. Clone the Repository:
-- git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
+- git clone https://github.com/Rch1k559/django-weather-app.git
 - cd YOUR_REPOSITORY_NAME
 
 # 2. Create and Activate a Virtual Environment:
